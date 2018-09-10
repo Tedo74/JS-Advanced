@@ -1,4 +1,5 @@
 function addItem() {
+    
     let ul = document.getElementById('items');
     let text = document.getElementById('newText');
     let li = document.createElement('li');
