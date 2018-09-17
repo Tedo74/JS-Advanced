@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Distance Converter</title>
+    <style>
+        label, input {
+            display: inline-block;
+            width: 5em;
+        }
+
+        label {
+            text-align: right;
+        }
+    </style>
+
+</head>
+<body onload="attachEventsListeners()">
+<script>
+    function attachEventsListeners() {
+        let rates = {
+            'km': 1000,
+            'm': 1,
+            'cm': 0.01,
+            'mm': 0.001,
+            'yrd': 0.9144,
+            'in': 0.0254,
+            'mi': 1609.34,
+            'ft': 0.3048
+        };
+
+        document.getElementById('convert').addEventListener('click', calcDistance);
+
+        function calcDistance() {
+            let inputDistance = Number(document.getElementById('inputDistance').value);
+            let inUnit = document.getElementById('inputUnits').value;
+            let outUnit = document.getElementById('outputUnits').value;
+
+            let distanceInMeters = rates[inUnit] * inputDistance;
+            let result = (1 / rates[outUnit]) * distanceInMeters;
+            document.getElementById('outputDistance').value = result;
+        }
+    }
+</script>
+<div>
+    <label for="inputDistance">From:</label>
+    <input type="text" id="inputDistance">
+    <select id="inputUnits">
+        <option value="km">Kilometers</option>
+        <option value="m">Meters</option>
+        <option value="cm">Centimeters</option>
+        <option value="mm">Millimeters</option>
+        <option value="mi">Miles</option>
+        <option value="yrd">Yards</option>
+        <option value="ft">Feet</option>
+        <option value="in">Inches</option>
+    </select>
+    <input type="button" id="convert" value="Convert">
+</div>
+<div>
+    <label for="outputDistance">To:</label>
+    <input type="text" id="outputDistance" disabled="disabled">
+    <select id="outputUnits">
+        <option value="km">Kilometers</option>
+        <option value="m">Meters</option>
+        <option value="cm">Centimeters</option>
+        <option value="mm">Millimeters</option>
+        <option value="mi">Miles</option>
+        <option value="yrd">Yards</option>
+        <option value="ft">Feet</option>
+        <option value="in">Inches</option>
+    </select>
+</div>
+</body>
+</html>
