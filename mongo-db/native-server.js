@@ -11,13 +11,13 @@ mongodb.MongoClient.connect(
       return;
     }
     const coll = client.db('myDb').collection('cars');
-    coll.insertOne({ model: 'BMW' });
+    coll.insertOne({ model: 'BMW' });// add item to db
     coll
       .find()
       .toArray()
       .then((data) => {
         console.log(JSON.stringify(data));
       });
-    // client.close();
+    // read all
   }
 );
