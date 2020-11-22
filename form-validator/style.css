@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,800;1,300;1,400;1,800&display=swap');
+
+:root {
+  --success-color: green;
+  --error-color: red;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font: 16px/1.5 'Open Sans', sans-serif;
+}
+
+body {
+  background-color: aqua;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 85vh;
+}
+
+body,
+form,
+input,
+textarea {
+  font: inherit;
+}
+
+.container {
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  width: 400px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 1.4em;
+}
+
+.form {
+  padding: 30px 40px;
+}
+
+.form-control {
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.form-control label {
+  display: block;
+  color: #777;
+  margin-bottom: 5px;
+}
+
+.form-control input {
+  display: block;
+  border: 2px solid #f0f0f0;
+  border-radius: 4px;
+  width: 100%;
+  padding: 10px;
+  font-size: inherit;
+}
+
+.form-control input:focus {
+  outline: 0;
+  border-color: #777;
+}
+
+.form-control.success input {
+  border-color: var(--success-color);
+}
+
+.form-control.error input {
+  border-color: var(--error-color);
+}
+
+.form-control small {
+  color: var(--error-color);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+}
+
+.form-control.error small {
+  visibility: visible;
+}
+
+.form-button {
+  display: block;
+  width: 75%;
+  margin: 0 auto;
+  cursor: pointer;
+  background-color: #3498db;
+  color: white;
+  padding: 5px 10px;
+  outline: none;
+  border: 2px solid #3498db;
+  border-radius: 4px;
+}
+
+.form-button:hover,
+.form-button:focus {
+  background-color: white;
+  color: #3498db;
+}
